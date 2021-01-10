@@ -1,13 +1,25 @@
 #include "stdint.h"
 #include"inc/tm4c123gh6pm.h"
 
+void Delay_ms(int time_ms)//16 mhz için
+{
+  int i, j;
+  for(i = 0 ; i < time_ms; i++)
+      for(j = 0; j < 3180; j++)
+          {}  /* excute NOP for 1ms */
+}
+
 int main(void)
 {
-    volatile unsigned long delay;
+    // 25 khz pb6 %25 Duty ton , pb7 %75 duty
+    // 16 mhz -> 8mhz
+    long delay;
 //    1. Enable the PWM clock by writing a value of 0x0010.0000 to the RCGC0 register in the System
 //    Control module (see page 456).
-    SYSCTL_RCGC0_R|=0X00100000; // SYSCTL_RCGC0_PWM0;
-    delay = SYSCTL_RCGC0_R;
+    SYSCTL_RCGC0_R|=0X00100000; // SYSCTL_RCGC0_PWM0;// pwm0 modulu aktif
+    //delay = SYSCTL_RCGC0_R; // birazcýk gecikme yap
+    // çevre birimi aktif olana kadar bekle // bunun kodunu yazýcam acýklayacam
+    while (!(SYSCTL_PRPWM_R==1));
 //    2. Enable the clock to the appropriate GPIO module via the RCGC2 register in the System Control
 //    module (see page 464) pb6 ve pb7 idi
 
@@ -22,7 +34,7 @@ int main(void)
     // direction outpurr
     //GPIO_PORTB_DIR_R|=0xc0;
     // analog fonk kapatýrsan iyi olur
-    GPIO_PORTB_AMSEL_R &= 0x00;
+    //GPIO_PORTB_AMSEL_R &= 0x00;
 
 //    4. Configure the PMCn fields in the GPIOPCTL register to assign the PWM signals to the appropriate
 //    pins (see page 688 and Table 23-5 on page 1351).
@@ -39,28 +51,37 @@ int main(void)
 
 //      6. Configure the PWM generator for countdown mode with immediate updates to the parameters.
 //      Write the PWM0CTL register with a value of 0x0000.0000.
-//      Write the PWM0GENA register with a value of 0x0000.008C.
+//      Write the PWM0GENA register with a value of 0x0000.008C. -> pb6
 //      Write the PWM0GENB register with a value of 0x0000.080C.
-      PWM0_0_CTL_R = 0x00000000; //PWM0_CTL_R=0x00;
-      PWM0_0_GENA_R |= 0x0000008C;
+      PWM0_0_CTL_R = 0x00000000; //PWM0_CTL_R=0x00; // saymýyor disable pwm0
+      PWM0_0_GENA_R |= 0x000000c8; // right align
       PWM0_0_GENB_R |= 0x0000080C;
 
       //7.
       PWM0_0_LOAD_R = 320-1;
 
       //8
-      PWM0_0_CMPA_R = 240-1;// %25 DUTY
+      int a=80-1;
+      PWM0_0_CMPA_R = a;// %25 DUTY
 
       //9
       PWM0_0_CMPB_R = 80-1; // %75 PB7
 
       // 10 STARTT
-      PWM0_0_CTL_R = 0x00000001; // PWM0_CTL_R=0x01;
+      PWM0_0_CTL_R = PWM_0_CTL_ENABLE; //0x00000001; // PWM0_CTL_R=0x01;
 
       // 11 ENABLE OUTPUT
       PWM0_ENABLE_R=0x03;
 
-      while(1);
+      while(1){
+
+//          a=a-1;
+//          PWM0_0_CMPA_R=a;
+//          Delay_ms(10);
+//          if (a<=0){
+//              a=320-1;
+//          }
+      }
 
       return 0;
 }

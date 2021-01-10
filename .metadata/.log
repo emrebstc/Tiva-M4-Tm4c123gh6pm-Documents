@@ -1822,3 +1822,167 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 
 !ENTRY org.eclipse.cdt.core 1 0 2021-01-10 15:02:55.588
 !MESSAGE Indexed 'hafta0dpwm4_ucbuolsun' (3 sources, 2 headers) in 0,445 sec: 44 declarations; 381 references; 0 unresolved inclusions; 0 syntax errors; 40 unresolved names (%8,6)
+!SESSION 2021-01-10 16:02:42.254 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180301-0715
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=tr_TR
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY com.ti.common.core 4 0 2021-01-10 16:02:47.430
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 4 0 2021-01-10 16:02:47.439
+!MESSAGE debugServerDir=C:/ti/ccsv8/ccs_base/DebugServer
+
+!ENTRY org.eclipse.launchbar.core 2 0 2021-01-10 16:03:20.202
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2021-01-10 16:03:20.239
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2021-01-10 16:03:20.253
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-01-10 16:04:44.943
+!MESSAGE Connection to http://software-dl.ti.com/ccs/esd/gcc_arm/9.2.1/p2.index failed on Connection timed out: connect. Retry attempt 0 started
+!STACK 0
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient4.ECFHttpClientProtocolSocketFactory.connectSocket(ECFHttpClientProtocolSocketFactory.java:86)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2021-01-10 16:04:58.202
+!MESSAGE Connection to http://software-dl.ti.com/dsps/dsps_public_sw/sdo_ccstudio/codegen/Updates/p2win32/content.xml.xz failed on Network is unreachable: connect. Retry attempt 0 started
+!STACK 0
+java.net.SocketException: Network is unreachable: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient4.ECFHttpClientSecureProtocolSocketFactory.performConnection(ECFHttpClientSecureProtocolSocketFactory.java:96)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient4.ECFHttpClientSecureProtocolSocketFactory.connectSocket(ECFHttpClientSecureProtocolSocketFactory.java:77)
+	at org.apache.http.conn.scheme.SchemeLayeredSocketFactoryAdaptor2.connectSocket(SchemeLayeredSocketFactoryAdaptor2.java:62)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:675)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:488)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:03:58.409
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:03:58.489
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:05.539
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:05.668
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:06.970
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:07.135
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:08.234
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:08.374
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:09.501
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:09.645
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:10.613
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:10.750
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:12.300
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:12.525
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:27.654
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:27.830
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:28.782
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:28.903
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:29.757
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:29.882
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:30.954
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Unable to communicate with the device. Please check your connection.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-01-10 17:04:31.132
+!MESSAGE DS_ERROR: Error connecting to the target:
+Unable to communicate with the device. Please check your connection.
