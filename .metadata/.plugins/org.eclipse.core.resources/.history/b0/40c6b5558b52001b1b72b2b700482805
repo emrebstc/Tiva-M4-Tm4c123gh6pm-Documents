@@ -1,0 +1,11 @@
+#include "stdint.h"
+#include"inc/tm4c123gh6pm.h"
+
+int main(void)
+{
+//    1. Enable the PWM clock by writing a value of 0x0010.0000 to the RCGC0 register in the System
+//    Control module (see page 456).
+    SYSCTL_RCGC0_R=0x00100000;
+
+	return 0;
+}
