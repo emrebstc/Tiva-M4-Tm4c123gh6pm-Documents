@@ -73,7 +73,7 @@ int main(void)
       while(1){
           PWM0_0_CMPA_R = a;
           a--;
-          Delay_ms(100);
+          Delay_ms(10);
           if (a<0){
               a=320;
           }
